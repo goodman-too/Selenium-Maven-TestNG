@@ -18,6 +18,7 @@ public class EditAddressTest {
         System.setProperty("webdriver.chrome.driver", PARAMETERS.DRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
 
         driver.get("http://a.testaddressbook.com/sign_in");
 

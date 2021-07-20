@@ -17,16 +17,29 @@ public class RemoveAddressTest {
 
     @BeforeTest
     public void setup() {
+        //Driver info
         System.setProperty("webdriver.chrome.driver", PARAMETERS.DRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
+        //Open page
         driver.get("http://a.testaddressbook.com/sign_in");
 
+        //Log In
         driver.findElement(By.id("session_email")).sendKeys(PARAMETERS.LOGIN);
         driver.findElement(By.id("session_password")).sendKeys(PARAMETERS.PASSWORD);
         driver.findElement(By.cssSelector("input[class='btn btn-primary']")).click();
+
+        //Add address to remove
+        driver.findElement(By.cssSelector("a[data-test='addresses']")).click();
+        driver.findElement(By.cssSelector("a[data-test='create']")).click();
+        driver.findElement(By.id("address_first_name")).sendKeys("Name");
+        driver.findElement(By.id("address_last_name")).sendKeys("Last");
+        driver.findElement(By.id("address_street_address")).sendKeys("1111 Default Street");
+        driver.findElement(By.id("address_zip_code")).sendKeys("01234");
+        driver.findElement(By.id("address_city")).sendKeys("Minsk");
+        driver.findElement(By.cssSelector("input[data-test='submit']")).click();
     }
 
     @Test

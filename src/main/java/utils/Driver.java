@@ -3,8 +3,8 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import java.util.concurrent.TimeUnit;
-import properties.PARAMETERS;
 
 
 public class Driver {
@@ -12,7 +12,7 @@ public class Driver {
     private static WebDriver driver;
 
     private static void initChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", PARAMETERS.DRIVER_PATH);
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     }
 
     public static WebDriver getChromeDriver() {

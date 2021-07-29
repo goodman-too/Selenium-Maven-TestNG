@@ -99,6 +99,16 @@ public class AddressTests {
 
     @Test
     public void editAddressTest() {
+        //Add address to edit
+        driver.navigate().to("http://a.testaddressbook.com/addresses/new");
+
+        driver.findElement(By.id("address_first_name")).sendKeys("Name");
+        driver.findElement(By.id("address_last_name")).sendKeys("Last");
+        driver.findElement(By.id("address_street_address")).sendKeys("1111 Default Street");
+        driver.findElement(By.id("address_zip_code")).sendKeys("01234");
+        driver.findElement(By.id("address_city")).sendKeys("Minsk");
+        driver.findElement(By.cssSelector("input[data-test='submit']")).click();
+
         //Go to edit page
         driver.navigate().to("http://a.testaddressbook.com/addresses");
         driver.findElement(By.xpath("//table[@class='table']/tbody/tr[last()]/td[last()-1]/a")).click();

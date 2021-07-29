@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import properties.PARAMETERS;
 import utils.Driver;
 import utils.LoginPage;
-import utils.StaticDataProvider;
+import properties.StaticDataProvider;
 
 
 public class LoginTests {
